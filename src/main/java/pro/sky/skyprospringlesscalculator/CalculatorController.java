@@ -35,5 +35,4 @@ public class CalculatorController {
         String result = dividetor.dividetion();
         return result;
     }
-
 }

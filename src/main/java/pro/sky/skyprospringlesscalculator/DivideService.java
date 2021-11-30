@@ -1,7 +1,6 @@
 package pro.sky.skyprospringlesscalculator;
 
 public class DivideService extends Calculate {
-
     public DivideService(double arg1, double arg2){
         super(arg1,arg2);
     }

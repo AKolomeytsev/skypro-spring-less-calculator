@@ -5,7 +5,7 @@ public class SubtractionService extends Calculate {
         super(arg1,arg2);
     }
     public String subtraction(){
-        double sub = this.arg1 - this.arg2;
+        double sub = this.arg1-this.arg2;
         return this.arg1 + " - " + this.arg2 + " = " + sub;
     }
 }

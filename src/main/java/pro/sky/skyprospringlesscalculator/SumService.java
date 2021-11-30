@@ -5,7 +5,7 @@ public class SumService extends Calculate {
         super(arg1,arg2);
     }
     public String sum(){
-        double sum = this.arg1 + this.arg2;
+        double sum = this.arg1+this.arg2;
         return this.arg1 + " + " + this.arg2 + " = " + sum;
     }
 }

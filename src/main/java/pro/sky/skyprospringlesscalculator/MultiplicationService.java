@@ -5,7 +5,7 @@ public class MultiplicationService extends Calculate {
         super(arg1,arg2);
     }
     public String multiplication(){
-        double mult = this.arg1 * this.arg2;
+        double mult = this.arg1*this.arg2;
         return this.arg1 + " * " + this.arg2 + " = " + mult;
     }
 }
