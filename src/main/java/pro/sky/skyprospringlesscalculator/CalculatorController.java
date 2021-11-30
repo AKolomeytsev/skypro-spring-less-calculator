@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class CalculatorController {
     @GetMapping
     public String calculator(){
-        return "calculator";
+        Invitation invitator = new Invitation();
+        return invitator.getInvitation() ;
     }
     @GetMapping(path = "/sum")
     public String sum(@RequestParam("argument1") double arg1,@RequestParam("argument2") double arg2){
