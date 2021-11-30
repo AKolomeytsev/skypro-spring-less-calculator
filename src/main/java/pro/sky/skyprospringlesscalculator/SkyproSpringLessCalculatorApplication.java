@@ -8,6 +8,7 @@ public class SkyproSpringLessCalculatorApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SkyproSpringLessCalculatorApplication.class, args);
+
 	}
 
 }
