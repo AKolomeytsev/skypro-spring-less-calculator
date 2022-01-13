@@ -2,50 +2,79 @@ package pro.sky.skyprospringlesscalculator;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import pro.sky.skyprospringlesscalculator.data.Calculate;
 import pro.sky.skyprospringlesscalculator.exeptions.IllegalArgumentException;
+import pro.sky.skyprospringlesscalculator.services.CalculationService;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class CalculateTest {
 
-    private SumService sum;
-    private MultiplicationService multiplication;
-    private SubtractionService subtraction;
-    private DivideService divide;
-    private DivideService divide1;
+    private final CalculationService calculationService = new CalculationService();
+    private Calculate calculate1;
+    private Calculate calculate2;
+    private Calculate calculate3;
+    private Calculate calculate4;
 
     @BeforeEach
     public void settings(){
-       sum  = new SumService(-1,1);
-       multiplication = new MultiplicationService(10,100);
-       subtraction = new SubtractionService(10,100);
-       divide = new DivideService(10,10);
-       divide1 = new DivideService(10,0);
+        calculate1 = new Calculate(10,23);
+        calculate2 = new Calculate(-13,123);
+        calculate3 = new Calculate(-13,-123);
+        calculate4 = new Calculate(256,0);
+
     }
 
     @Test
     public void sumTest(){
-        assertNotEquals(' ',sum.sum());
+        calculationService.setCalculate(calculate1);
+        assertNotEquals(' ',calculationService.sumService(calculationService.getCalculate()));
+        calculationService.setCalculate(calculate2);
+        assertNotEquals(' ',calculationService.sumService(calculationService.getCalculate()));
+        calculationService.setCalculate(calculate3);
+        assertNotEquals(' ',calculationService.sumService(calculationService.getCalculate()));
+        calculationService.setCalculate(calculate4);
+        assertNotEquals(' ',calculationService.sumService(calculationService.getCalculate()));
     }
 
     @Test
     public void multiplicationTest(){
-        assertNotEquals(' ',multiplication.multiplication());
+        calculationService.setCalculate(calculate1);
+        assertNotEquals(' ',calculationService.multiplicationService(calculationService.getCalculate()));
+        calculationService.setCalculate(calculate2);
+        assertNotEquals(' ',calculationService.multiplicationService(calculationService.getCalculate()));
+        calculationService.setCalculate(calculate3);
+        assertNotEquals(' ',calculationService.multiplicationService(calculationService.getCalculate()));
+        calculationService.setCalculate(calculate4);
+        assertNotEquals(' ',calculationService.multiplicationService(calculationService.getCalculate()));
     }
 
     @Test
     public void subtractionTest(){
-        assertNotEquals(' ',subtraction.subtraction());
+        calculationService.setCalculate(calculate1);
+        assertNotEquals(' ',calculationService.subtractionService(calculationService.getCalculate()));
+        calculationService.setCalculate(calculate2);
+        assertNotEquals(' ',calculationService.subtractionService(calculationService.getCalculate()));
+        calculationService.setCalculate(calculate3);
+        assertNotEquals(' ',calculationService.subtractionService(calculationService.getCalculate()));
+        calculationService.setCalculate(calculate3);
+        assertNotEquals(' ',calculationService.subtractionService(calculationService.getCalculate()));
     }
 
     @Test
     public void divideTest(){
-        assertNotEquals(' ',divide.dividetion());
-    }
-
-    @Test
-    public void divideTestNotExeption(){
-        assertDoesNotThrow(IllegalArgumentException::new,divide1.dividetion());
+        calculationService.setCalculate(calculate1);
+        assertNotEquals(' ',calculationService.divideService(calculationService.getCalculate()));
+        assertDoesNotThrow(IllegalArgumentException::new,calculationService.divideService(calculationService.getCalculate()));
+        calculationService.setCalculate(calculate2);
+        assertNotEquals(' ',calculationService.divideService(calculationService.getCalculate()));
+        assertDoesNotThrow(IllegalArgumentException::new,calculationService.divideService(calculationService.getCalculate()));
+        calculationService.setCalculate(calculate3);
+        assertNotEquals(' ',calculationService.divideService(calculationService.getCalculate()));
+        assertDoesNotThrow(IllegalArgumentException::new,calculationService.divideService(calculationService.getCalculate()));
+        calculationService.setCalculate(calculate4);
+        assertNotEquals(' ',calculationService.divideService(calculationService.getCalculate()));
+        assertDoesNotThrow(IllegalArgumentException::new,calculationService.divideService(calculationService.getCalculate()));
     }
 
 }
